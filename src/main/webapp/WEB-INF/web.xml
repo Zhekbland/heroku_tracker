@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+    
+    <!--Error page-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error_page.jsp</location>
+    </error-page>
+    
+    <!--Filter-->
+    <filter>
+        <filter-name>Filter</filter-name>
+        <filter-class>ru.job4j.servlets.http.controllers.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter</filter-name>
+        <url-pattern>*</url-pattern>
+    </filter-mapping>
+
+    <!--Country controller-->
+    <servlet>
+        <servlet-name>country</servlet-name>
+        <servlet-class>ru.job4j.servlets.http.controllers.CountryController</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>country</servlet-name>
+        <url-pattern>/country</url-pattern>
+    </servlet-mapping>
+
+    <!--City controller-->
+    <servlet>
+        <servlet-name>city</servlet-name>
+        <servlet-class>ru.job4j.servlets.http.controllers.CityController</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>city</servlet-name>
+        <url-pattern>/city</url-pattern>
+    </servlet-mapping>
+
+    <!--Users controller-->
+    <servlet>
+        <servlet-name>UsersController</servlet-name>
+        <servlet-class>ru.job4j.servlets.http.controllers.UsersController</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsersController</servlet-name>
+        <url-pattern>/users</url-pattern>
+    </servlet-mapping>
+
+    <!--User Create controller-->
+    <servlet>
+        <servlet-name>UserCreateServlet</servlet-name>
+        <servlet-class>ru.job4j.servlets.http.controllers.UserCreateController</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserCreateServlet</servlet-name>
+        <url-pattern>/create</url-pattern>
+    </servlet-mapping>
+
+    <!--User Update controller-->
+    <servlet>
+        <servlet-name>UserUpdateServlet</servlet-name>
+        <servlet-class>ru.job4j.servlets.http.controllers.UserUpdateController</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserUpdateServlet</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+
+    <!--Sign In controller-->
+    <servlet>
+        <servlet-name>SignIn</servlet-name>
+        <servlet-class>ru.job4j.servlets.http.controllers.SignInController</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignIn</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+
+    <!--Sign Out controller-->
+    <servlet>
+        <servlet-name>SignOut</servlet-name>
+        <servlet-class>ru.job4j.servlets.http.controllers.SignOutController</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignOut</servlet-name>
+        <url-pattern>/signout</url-pattern>
+    </servlet-mapping>
+
+    <!--Check Login controller-->
+    <servlet>
+        <servlet-name>CheckLogin</servlet-name>
+        <servlet-class>ru.job4j.servlets.http.controllers.CheckLoginController</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckLogin</servlet-name>
+        <url-pattern>/loginexists</url-pattern>
+    </servlet-mapping>
+
+    <!--Check Email controller-->
+    <servlet>
+        <servlet-name>CheckEmail</servlet-name>
+        <servlet-class>ru.job4j.servlets.http.controllers.CheckEmailController</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckEmail</servlet-name>
+        <url-pattern>/emailexists</url-pattern>
+    </servlet-mapping>
+
+
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>ru.job4j.servlets.http.controllers.CharsetFilter</filter-class>
+        <init-param>
+            <param-name>requestEncoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+</web-app>
