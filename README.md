@@ -1,5 +1,6 @@
 ### [Трекер пользователей с web интерфейсом](https://github.com/zhekbland/heroku_tracker/tree/master/src/main)
 ### [Трекер пользователей на Heroku](https://zhekbland-servlets.herokuapp.com/)
+### [Tracker on AWS](http://tracker.eu-west-2.elasticbeanstalk.com/)
 
 Для тестирования:
 Login: admin Password: root
