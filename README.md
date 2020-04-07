@@ -1,5 +1,6 @@
 ### [Трекер пользователей с web интерфейсом](https://github.com/zhekbland/heroku_tracker/tree/master/src/main)
 ### [Трекер пользователей на Heroku](https://zhekbland-servlets.herokuapp.com/)
+### [Tracker on AWS](http://servlet-tracker.eu-central-1.elasticbeanstalk.com/)
 
 Для тестирования:
 Login: admin Password: root
@@ -37,6 +38,7 @@ Login: admin Password: root
 * JDBC
 * Log4j2
 * MySQL
+* PostgreSQL
 * Servlet
 * JSP JSTL
 * JavaScript
